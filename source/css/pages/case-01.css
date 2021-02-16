@@ -68,6 +68,7 @@
 
     &--with-icon {
       display: flex;
+      align-items: center;
 
       &::after {
         width: calc(100% - (15px + 18px));
@@ -162,11 +163,16 @@
     margin: 0;
 
     dt {
+      max-width: 45%;
+
       color: $dark-gray;
     }
 
     dd {
+      max-width: 46%;
       margin: 0;
+
+      text-align: right;
     }
   }
 
@@ -256,6 +262,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 311px;
     margin-bottom: 30px;
   }
@@ -272,6 +279,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 198px;
   }
 
@@ -303,6 +311,11 @@
   }
 
   .product-card__link-to-availability {
+    max-width: 186px;
     margin-left: 15px;
+
+    span {
+      max-width: 153px;
+    }
   }
 }
