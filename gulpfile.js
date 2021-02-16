@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import nested from 'postcss-nested';
 import simpleVars from 'postcss-simple-vars';
+import nestedVars from 'postcss-nested-vars';
 import stylelint from 'stylelint';
 import reporter from 'postcss-reporter';
 import plumber from 'gulp-plumber';
@@ -23,7 +24,7 @@ const Directory = {
 const plugins = [
   postcssImport(),
   nested(),
-  simpleVars(),
+  nestedVars(),
   stylelint(),
   autoprefixer(),
   cssnano(),
