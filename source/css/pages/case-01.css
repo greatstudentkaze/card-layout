@@ -1,0 +1,43 @@
+.case-01 {
+  body {
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  main {
+    padding-top: 98px;
+    padding-bottom: 98px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .product-card {
+    display: grid;
+    grid-template-columns: 670px 470px;
+    column-gap: 30px;
+  }
+
+  .product-card__image {
+    margin: 0;
+
+    img {
+      display: block;
+      width: 670px;
+      height: 684px;
+
+      border-radius: 8px;
+    }
+  }
+
+  .product-card__info {
+    padding: 35px 30px;
+
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+}
