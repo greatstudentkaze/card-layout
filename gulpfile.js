@@ -46,6 +46,7 @@ export const clean = () => del(Directory.BUILD);
 export const copy = () =>
   gulp.src([
     `${Directory.SOURCE}/**/*.html`,
+    `${Directory.SOURCE}/**/*.js`,
     `${Directory.SOURCE}/fonts/**/*.{woff,woff2}`,
     `${Directory.SOURCE}/img/**`,
     `${Directory.SOURCE}/*.ico`,
@@ -73,6 +74,7 @@ export const server = (done) => {
 
 export const watcher = () => {
   gulp.watch(`${Directory.SOURCE}/css/**/*.css`, gulp.series(styles));
+  gulp.watch(`${Directory.SOURCE}/js/**/*.js`, gulp.series(copy));
   gulp.watch(`${Directory.SOURCE}/**/*.html`, gulp.series(copy));
 };
 
