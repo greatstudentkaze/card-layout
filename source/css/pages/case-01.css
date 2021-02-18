@@ -6,7 +6,7 @@
   $dark-gray: #787878;
   $yellow: #f8d456;
 
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", "Arial", sans-serif;
 
   main {
     padding-top: 98px;
@@ -16,38 +16,21 @@
   .link {
     $visited-color: #797980;
 
-    position: relative;
-
+    font-size: 14px;
+    line-height: 18px;
     color: $black;
 
-    transition: color 0.2s ease-in-out 0s;
-
-    &::after {
-      content: "";
-
-      position: absolute;
-      bottom: 0;
-      left: 0;
-
-      display: block;
-      width: 100%;
-
-      opacity: 0;
-
-      transition: opacity 0.2s ease-in-out 0s;
-    }
+    transition: text-decoration-color 0.2s ease-in-out 0s;
 
     &:visited {
       color: $visited-color;
     }
 
     &:hover {
-      &::after {
-        height: 1px;
+      text-decoration: underline;
+      text-decoration-color: $black;
 
-        background-color: $black;
-        opacity: 1;
-      }
+      transition: text-decoration-color 0.2s ease-in-out 0s;
     }
 
     &:focus {
@@ -56,47 +39,61 @@
 
     &:focus-visible,
     &:active {
-      &::after {
-        bottom: -1px;
-
-        height: 2px;
-
-        background-color: $yellow;
-        opacity: 1;
-      }
+      text-decoration: underline;
+      text-decoration-color: $yellow;
+      text-decoration-thickness: 2px;
+      transition: text-decoration-color 0.2s ease-in-out 0s;
     }
 
     &--with-icon {
-      display: flex;
-      align-items: center;
+      position: relative;
+
+      display: inline-block;
+      padding-right: 33px;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+
+        background-color: $white;
+        border-radius: 50%;
+
+        transition: background-color 0.2s ease-in-out 0s;
+      }
 
       &::after {
-        width: calc(100% - (15px + 18px));
-      }
+        content: "";
 
-      span {
-        margin-right: 15px;
-      }
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 6px;
 
-      svg {
-        circle {
-          transition: fill 0.2s ease-in-out 0s;
-        }
+        width: 5px;
+        height: 8px;
 
-        path {
-          transition: stroke 0.2s ease-in-out 0s;
-        }
+        background-image: url("../../img/case-01/arrow-black.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: transparent;
       }
 
       &:hover {
-        svg {
-          circle {
-            fill: $yellow;
-          }
+        &::before {
+          background-color: $yellow;
+        }
 
-          path {
-            stroke: $white;
-          }
+        &::after {
+          background-image: url("../../img/case-01/arrow-white.svg");
         }
       }
     }
@@ -110,7 +107,7 @@
     padding: 0 20px;
 
     font-size: 14px;
-    line-height: 45px;
+    line-height: calc(49px - 2px * 2);
     text-align: center;
     font-weight: 700;
     vertical-align: top;
@@ -119,6 +116,8 @@
     background-color: $yellow;
     border: 2px solid $yellow;
     border-radius: 6px;
+
+    transition: box-shadow 0.2s ease-in-out 0s;
 
     cursor: pointer;
 
@@ -138,6 +137,7 @@
 
     &:enabled:focus-visible,
     &:enabled:active {
+      transition: box-shadow 0.2s ease-in-out 0s;
       box-shadow: 0 0 0 1px $black;
     }
 
@@ -207,14 +207,12 @@
     column-gap: 30px;
   }
 
+  .product-card__img-container {
+    border-radius: 8px;
+  }
+
   .product-card__picture {
-    margin: 0;
-
-    img {
-      display: block;
-
-      border-radius: 8px;
-    }
+    display: block;
   }
 
   .product-card__info {
@@ -258,7 +256,7 @@
     color: $dark-gray;
   }
 
-  .product-card__wrap {
+  .product-card__price-and-rating-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
