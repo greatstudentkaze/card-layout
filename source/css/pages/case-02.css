@@ -16,18 +16,13 @@
   }
 
   .link {
-    font-size: 12px;
-    line-height: 16px;
-
     color: $dark-gray;
-    text-decoration: underline;
-    text-decoration-color: $dark-gray;
+    box-shadow: 0 1px 0 $dark-gray;
 
-    transition: color 0.2s ease-in-out 0s, text-decoration-color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
 
     &:visited {
       color: #c4c4c4;
-      text-decoration: #c4c4c4;
     }
 
     &:focus {
@@ -35,16 +30,15 @@
     }
 
     &:hover {
-      transition: color 0.2s ease-in-out 0s, text-decoration 0.2s ease-in-out 0s;
+      transition: color 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
       color: $black;
-      text-decoration: none;
+      box-shadow: 0 1px 0 $black;
     }
 
     &:focus-visible,
     &:active {
-      transition: color 0.2s ease-in-out 0s, text-decoration-color 0.2s ease-in-out 0s;
-      color: $blue;
-      text-decoration-color: $blue;
+      transition: color 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
+      box-shadow: 0 2px 0 $yellow;
     }
   }
 
@@ -80,6 +74,7 @@
 
   .card-list__item {
     flex-basis: calc((100% - 30px * 3) / 4);
+    min-height: 357px;
     margin-bottom: 30px;
 
     &:nth-last-child(-n + 4):nth-child(4n + 1),
@@ -97,14 +92,12 @@
 
     display: grid;
     grid-template-rows:
-      200px
+      calc(200px + 1px)
       1fr;
     height: 100%;
 
-    border: 1px solid $gray-border;
+    background-color: $white;
     border-radius: 8px;
-
-    overflow: hidden;
 
     &::before {
       content: "";
@@ -116,9 +109,9 @@
       bottom: 0;
       left: 0;
 
-      background-color: $white;
-      border-color: $gray-border;
-      border-radius: 8px;
+      background-color: inherit;
+      border: 1px solid $gray-border;
+      border-radius: inherit;
 
       transition-property: top, right, bottom, left, border, box-shadow;
       transition-duration: 0.2s;
@@ -127,7 +120,6 @@
     }
 
     &:hover {
-      overflow: visible;
 
       &::before {
         top: -10px;
@@ -138,6 +130,12 @@
         border-width: 1px;
         border-style: solid;
         box-shadow: 0 4px 15px rgba(76, 75, 77, 0.1);
+      }
+
+      .card-item__link {
+        background-color: inherit;
+
+        transition: background-color 0.2s ease-in-out 0s;
       }
     }
 
@@ -178,10 +176,31 @@
 
   .card-item__link {
     display: block;
+
+    background-color: $gray-border;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    outline: none;
+
+    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+
+    &:focus {
+      border-color: $yellow;
+      box-shadow: 0 1px 0 $yellow;
+      transition: border-color 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
+    }
   }
 
   .card-item__image {
     display: block;
+    height: 100%;
+
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+
+    object-fit: cover;
   }
 
   .card-item__info {
@@ -193,7 +212,7 @@
     padding: 15px 9px 19px;
   }
 
-  .card-item__code-and-rating-block {
+  .card-item__header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -217,7 +236,8 @@
   }
 
   .card-item__link-to-reviews {
-
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .card-item__title {
@@ -230,7 +250,7 @@
     color: $black;
   }
 
-  .card-item__price-and-button-block {
+  .card-item__footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
