@@ -383,15 +383,20 @@
   }
 
   .card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+      "pictures info"
+      "description description";
+    grid-template-columns: calc(170px + 30px + 500px) 1fr;
+    row-gap: 60px;
+    column-gap: 70px;
   }
 
   .card__img-container {
-    flex-basis: 700px;
+    grid-area: pictures;
+
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 35px;
   }
 
   .card__picture {
@@ -413,13 +418,11 @@
   }
 
   .card__info-container {
-    flex-basis: 400px;
-    margin-left: 35px;
+    grid-area: info;
   }
 
   .card__description-container {
-    flex-basis: 100%;
-    margin-top: 60px;
+    grid-area: description;
   }
 
   .card-description__tabs {
