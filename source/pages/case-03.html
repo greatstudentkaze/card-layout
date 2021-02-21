@@ -56,7 +56,7 @@
               <label class="memory-size-chooser__label" for="memory_size_2">128Gb</label>
               <input class="memory-size-chooser__input visually-hidden" type="radio" name="memory_size" value="256Gb" id="memory_size_3">
               <label class="memory-size-chooser__label" for="memory_size_3">256Gb</label>
-              <input class="memory-size-chooser__input visually-hidden" type="radio" name="memory_size" value="512Gb" id="memory_size_4">
+              <input class="memory-size-chooser__input visually-hidden" type="radio" name="memory_size" value="512Gb" id="memory_size_4" checked>
               <label class="memory-size-chooser__label" for="memory_size_4">512Gb</label>
             </div>
           </div>
@@ -65,22 +65,24 @@
             <div class="color-chooser">
               <input class="color-chooser__input" type="radio" name="color" value="color_1" id="color_1" checked style="background-color: #262827;">
               <label class="visually-hidden" for="color_1">Чёрный</label>
-              <input class="color-chooser__input" type="radio" name="color" value="color_1" id="color_2" style="background-color: #c0e9d7;">
-              <label class="visually-hidden" for="color_2">Бледно-зелёный</label>
-              <input class="color-chooser__input" type="radio" name="color" value="color_1" id="color_3" style="background-color: #ffe98c;">
+              <input class="color-chooser__input" type="radio" name="color" value="color_2" id="color_2" style="background-color: #c0e9d7;">
+              <label class="visually-hidden" for="color_2">Мятный</label>
+              <input class="color-chooser__input" type="radio" name="color" value="color_3" id="color_3" style="background-color: #ffe98c;">
               <label class="visually-hidden" for="color_3">Жёлтый</label>
-              <input class="color-chooser__input" type="radio" name="color" value="color_1" id="color_4" style="background-color: #d7d4dd;">
+              <input class="color-chooser__input" type="radio" name="color" value="color_4" id="color_4" style="background-color: #d7d4dd;">
               <label class="visually-hidden" for="color_4">Серый</label>
-              <input class="color-chooser__input" type="radio" name="color" value="color_1" id="color_5" style="background-color: #cd273d;">
+              <input class="color-chooser__input" type="radio" name="color" value="color_5" id="color_5" style="background-color: #cd273d;">
               <label class="visually-hidden" for="color_5">Красный</label>
-              <input class="color-chooser__input" type="radio" name="color" value="color_1" id="color_6" style="background-color: #fdfaf5;">
-              <label class="visually-hidden" for="color_6">Белый</label>
+              <input class="color-chooser__input" type="radio" name="color" value="color_6" id="color_6" style="background-color: #fdfaf5;">
+              <label class="visually-hidden" for="color_6">Бежевый</label>
             </div>
           </div>
           <div class="card-info__characteristics-block">
-            <h3 class="card-info__subtitle">Характеристики</h3>
-            <a class="card-info__link-to-spec link" href="spec.html">Все характеристики</a>
-            <dl class="card-info__characteristics characteristics">
+            <h3 class="card-info__subtitle">
+              Характеристики
+              <a class="card-info__subtitle-link link" href="spec.html">Все характеристики</a>
+            </h3>
+            <dl class="characteristics">
               <div class="characteristics__row">
                 <dt>Диагональ экрана, в дюймах:  </dt>
                 <dd>5.8</dd>
@@ -115,11 +117,12 @@
               </div>
             </dl>
           </div>
-          <p class="card-info__price">
-            Цена: <b>107 990 ₽</b>
-          </p>
-          <button class="card-info__button card-info__button--cart button" type="submit">Добавить в корзину</button>
-          <button class="card-info__button card-info__button--installment button button--white" type="button">Рассрочка от <span>10 800 ₽ / месяц</span></button>
+          <dl class="card-info__price-list">
+            <dt>Цена:</dt>
+            <dd>107 990 ₽</dd>
+          </dl>
+          <button class="card-info__button button" type="submit">Добавить в корзину</button>
+          <button class="card-info__button button button--white" type="button">Рассрочка от <span>10 800 ₽ / месяц</span></button>
         </div>
         <div class="card__description-container card-description">
           <ul class="card-description__tabs tab-list" role="tablist">

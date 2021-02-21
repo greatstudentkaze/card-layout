@@ -237,7 +237,7 @@
 
   .tab-list__link {
     display: inline-block;
-    padding-bottom: 14px;
+    padding-bottom: 15px;
 
     font-weight: 500;
     color: inherit;
@@ -447,12 +447,21 @@
   }
 
   .card-info__subtitle {
+    display: flex;
+    align-items: center;
     margin: 0;
     margin-bottom: 15px;
 
     font-size: 18px;
     line-height: 27px;
     font-weight: 500;
+  }
+
+  .card-info__subtitle-link {
+    margin-left: auto;
+
+    font-size: 14px;
+    line-height: 21px;
   }
 
   .card-info__availability-and-rating-block {
@@ -509,41 +518,30 @@
 
   .card-info__memory-size-block {
     margin-bottom: 20px;
-    padding-bottom: 19px;
+    padding-bottom: 20px;
 
     border-bottom: 1px solid $gray;
   }
 
   .card-info__color-block {
     margin-bottom: 20px;
-    padding-bottom: 19px;
+    padding-bottom: 20px;
 
     border-bottom: 1px solid $gray;
   }
 
   .card-info__characteristics-block {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     margin-bottom: 20px;
-    padding-bottom: 19px;
+    padding-bottom: 20px;
 
     border-bottom: 1px solid $gray;
+
+    h3 {
+      margin-bottom: 16px;
+    }
   }
 
-  .card-info__characteristics {
-    flex-basis: 100%;
-  }
-
-  .card-info__link-to-spec {
-    margin-bottom: 15px;
-    margin-left: auto;
-
-    font-size: 14px;
-    line-height: 21px;
-  }
-
-  .card-info__price {
+  .card-info__price-list {
     display: flex;
     align-items: center;
     margin: 0;
@@ -552,7 +550,7 @@
     font-size: 18px;
     line-height: 27px;
 
-    b {
+    dd {
       margin-left: auto;
 
       font-size: 24px;
