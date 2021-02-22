@@ -165,8 +165,8 @@
   }
 
   .card-list-container {
-    min-width: 1170px;
-    max-width: 1170px;
+    min-width: 1200px;
+    max-width: 1200px;
     margin: 98px auto;
     padding: 0 15px;
   }
@@ -311,7 +311,7 @@
     display: flex;
     align-items: center;
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
     font-size: 18px;
     line-height: 1.5;
@@ -356,7 +356,7 @@
 
         position: absolute;
         top: 0;
-        left: 0;
+        left: -1px;
 
         display: block;
         width: 14px;
