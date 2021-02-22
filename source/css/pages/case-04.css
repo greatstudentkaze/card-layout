@@ -301,10 +301,14 @@
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
   }
 
   .card-item__picture {
     display: block;
+    width: auto;
+    max-height: 100%;
+    object-fit: cover;
   }
 
   .card-item__price {
@@ -406,5 +410,25 @@
   .card-item__icon-button {
     flex-basis: 20px;
     margin-left: 20px;
+
+    &--compare {
+      &:hover {
+        svg {
+          stroke: $red;
+        }
+      }
+
+      .card-item__compare:focus-visible + & {
+        svg {
+          stroke: $dark-red;
+        }
+      }
+
+      .card-item__compare:checked + & {
+        svg {
+          stroke: $red;
+        }
+      }
+    }
   }
 }
